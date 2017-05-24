@@ -34,8 +34,10 @@ namespace exoXp
         {
             int[] tabMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             int numberDay = 0;
-            int nbBisextil = annee / 4;
-            numberDay = (annee - 1) * 365 + nbBisextil;
+            int nbBisextil = (int)Math.Floor((double)(annee / 4));
+            int nbBisextilQC = (int)Math.Floor((double)(2017 / 400));
+            int nbBisextilC = (int)Math.Floor((double)(2017 / 100));
+            numberDay = (annee - 1) * 365 + (nbBisextil - nbBisextilC + nbBisextilQC);
             int i = 1;
             if(mois > 2)
             {
@@ -46,12 +48,11 @@ namespace exoXp
                 numberDay = numberDay + tabMonth[i];
                 i++;
             }
-            for(i=1;i<=jour; i++)
+            for(int j=1;j<=jour; j++)
             {
                 numberDay++;
             }
             resultatCalcul.Text = numberDay.ToString();
-
         }
 
         private void buttonCalcul_Click_1(object sender, RoutedEventArgs e)
@@ -61,7 +62,19 @@ namespace exoXp
 
         private void verificationAutomatique()
         {
+            DateTime an = new DateTime(1, 1, 1);
+            int annee;
+            int mois;
+            int jour;
+            DateTime date = new DateTime(2017, 05, 24);
+            TimeSpan diff = date - an;
+            int total = (int)diff.TotalDays;
+            resultatVerif.Text = total.ToString();
+        }
 
+        private void buttonVerif_Click(object sender, RoutedEventArgs e)
+        {
+            this.verificationAutomatique();
         }
     }
 }
