@@ -54,7 +54,7 @@ namespace exoXp
             this.calcul(24, 05, 2017);
         }
 
-        public static verificationAutomatique()
+        private void verificationAutomatique()
         {
 
         }
