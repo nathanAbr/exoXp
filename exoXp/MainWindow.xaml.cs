@@ -24,10 +24,23 @@ namespace exoXp
         {
             InitializeComponent();
         }
-
-        private void saisieDate_TextChanged(object sender, TextChangedEventArgs e)
+       
+        private void saisieDate_KeyPressed(object sender, TextChangedEventArgs e)
         {
 
+            int nb = saisieDate.Text.Length;
+            if (nb == 2)
+            {
+                saisieDate.Text += "/";
+                saisieDate.Focus();
+                saisieDate.SelectionStart = saisieDate.Text.Length;
+            }
+            if (nb == 5)
+            {
+                saisieDate.Text += "/";
+                saisieDate.Focus();
+                saisieDate.SelectionStart = saisieDate.Text.Length;
+            }
         }
     }
 }
