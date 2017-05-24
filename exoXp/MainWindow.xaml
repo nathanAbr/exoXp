@@ -16,6 +16,5 @@
             <TextBlock x:Name="resultatVerifie" HorizontalAlignment="Left" Margin="31,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" FontSize="36" Height="50"/>
             <Button x:Name="buttonVerif" Content="Vérifier" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top" Width="82" Height="32" FontSize="14"/>
         </Grid>
-
     </Grid>
 </Window>

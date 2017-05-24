@@ -55,6 +55,37 @@ namespace exoXp
             jour = Int32.Parse(textSaisie.Substring(0, 2));
             mois = Int32.Parse(textSaisie.Substring(3, 2));
             annee = Int32.Parse(textSaisie.Substring(6, 4));
+
+            this.calcul(jour, mois, annee);
+        }
+
+        private void calcul(int jour, int mois, int annee)
+        {
+            int[] tabMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            int numberDay = 0;
+            int nbBisextil = annee / 4;
+            numberDay = (annee - 1) * 365 + nbBisextil;
+            int i = 1;
+            if(mois > 2)
+            {
+                numberDay++;
+            }
+            while(i < mois)
+            {
+                numberDay = numberDay + tabMonth[i];
+                i++;
+            }
+            for(i=1;i<=jour; i++)
+            {
+                numberDay++;
+            }
+            resultatCalcul.Text = numberDay.ToString();
+
+        }
+
+        private void verificationAutomatique()
+        {
+
         }
     }
 }
