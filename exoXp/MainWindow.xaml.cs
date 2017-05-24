@@ -24,5 +24,10 @@ namespace exoXp
         {
             InitializeComponent();
         }
+
+        private void saisieDate_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
