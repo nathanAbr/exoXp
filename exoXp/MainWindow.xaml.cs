@@ -42,5 +42,19 @@ namespace exoXp
                 saisieDate.SelectionStart = saisieDate.Text.Length;
             }
         }
+
+        private void buttonCalcul_Click(object sender, RoutedEventArgs e)
+        {
+            string textSaisie;
+            int jour;
+            int mois;
+            int annee;
+            
+            textSaisie = saisieDate.Text.ToString();
+
+            jour = Int32.Parse(textSaisie.Substring(0, 2));
+            mois = Int32.Parse(textSaisie.Substring(3, 2));
+            annee = Int32.Parse(textSaisie.Substring(6, 4));
+        }
     }
 }

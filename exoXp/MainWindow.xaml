@@ -9,8 +9,8 @@
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,10,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="502" Height="40" TextAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Arial"><Run Text="Les mariés "/><Run Text="de "/><Run Text="l'an 1"/></TextBlock>
         <TextBlock x:Name="labelSaisieDate" HorizontalAlignment="Left" Margin="82,87,0,0" TextWrapping="Wrap" Text="Saisir une date" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="saisieDate" HorizontalAlignment="Left" Height="39" Margin="211,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" TextChanged="saisieDate_KeyPressed" UndoLimit="10"/>
-        <Button x:Name="buttonCalcul" Content="Calculer" HorizontalAlignment="Left" Margin="407,79,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="38"/>
+        <TextBox x:Name="saisieDate" HorizontalAlignment="Left" Height="39" Margin="211,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" TextChanged="saisieDate_KeyPressed" UndoLimit="10" FontSize="20"/>
+        <Button x:Name="buttonCalcul" Content="Calculer" HorizontalAlignment="Left" Margin="407,79,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="38" Click="buttonCalcul_Click"/>
         <Grid x:Name="blockResultat" HorizontalAlignment="Left" Height="160" Margin="10,149,0,0" VerticalAlignment="Top" Width="497" Background="#FFE2E2E2">
             <TextBlock x:Name="resultatCalcul" HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="36" Height="48"/>
             <TextBlock x:Name="resultatVerifie" HorizontalAlignment="Left" Margin="31,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="301" FontSize="36" Height="50"/>
