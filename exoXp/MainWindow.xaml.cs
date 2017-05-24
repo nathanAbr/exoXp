@@ -20,6 +20,9 @@ namespace exoXp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int jour;
+        private int mois;
+        private int annee;
         public MainWindow()
         {
             InitializeComponent();
@@ -45,16 +48,12 @@ namespace exoXp
 
         private void buttonCalcul_Click(object sender, RoutedEventArgs e)
         {
-            string textSaisie;
-            int jour;
-            int mois;
-            int annee;
-            
+            string textSaisie;    
             textSaisie = saisieDate.Text.ToString();
 
-            jour = Int32.Parse(textSaisie.Substring(0, 2));
-            mois = Int32.Parse(textSaisie.Substring(3, 2));
-            annee = Int32.Parse(textSaisie.Substring(6, 4));
+            this.jour = Int32.Parse(textSaisie.Substring(0, 2));
+            this.mois = Int32.Parse(textSaisie.Substring(3, 2));
+            this.annee = Int32.Parse(textSaisie.Substring(6, 4));
 
             this.calcul(jour, mois, annee);
         }
@@ -63,8 +62,10 @@ namespace exoXp
         {
             int[] tabMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             int numberDay = 0;
-            int nbBisextil = annee / 4;
-            numberDay = (annee - 1) * 365 + nbBisextil;
+            int nbBisextil = (int)Math.Floor((double)(annee / 4));
+            int nbBisextilQC = (int)Math.Floor((double)(2017 / 400));
+            int nbBisextilC = (int)Math.Floor((double)(2017 / 100));
+            numberDay = (annee - 1) * 365 + (nbBisextil - nbBisextilC + nbBisextilQC);
             int i = 1;
             if(mois > 2)
             {
@@ -75,17 +76,30 @@ namespace exoXp
                 numberDay = numberDay + tabMonth[i];
                 i++;
             }
-            for(i=1;i<=jour; i++)
+            for(int j=1;j<=jour; j++)
             {
                 numberDay++;
             }
             resultatCalcul.Text = numberDay.ToString();
-
         }
 
         private void verificationAutomatique()
         {
+            DateTime an = new DateTime(1, 1, 1);
+            DateTime date = new DateTime(this.annee, this.mois, this.jour);
+            TimeSpan diff = date - an;
+            int total = (int)diff.TotalDays;
+            resultatVerifie.Text = total.ToString();
+        }
 
+        private void buttonVerif_Click(object sender, RoutedEventArgs e)
+        {
+            this.verificationAutomatique();
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            saisieDate.Text = "";
         }
     }
 }
