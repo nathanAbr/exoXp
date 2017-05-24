@@ -13,7 +13,10 @@
         <Button x:Name="buttonCalcul" Content="Afficher" HorizontalAlignment="Left" Margin="334,80,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="38" Click="buttonCalcul_Click" Background="#FFA4EC5C"/>
         <Button x:Name="buttonDelete" Content="Effacer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="414,80,0,0" FontSize="16" Height="38" Click="buttonDelete_Click" Background="#FFF9A40E"/>
         <Grid x:Name="blockResultat" HorizontalAlignment="Left" Height="160" Margin="10,149,0,0" VerticalAlignment="Top" Width="497" Background="#FFE2E2E2">
-            <TextBlock x:Name="resultatCalcul" HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="36" Height="48"/>
+            <TextBlock x:Name="resultatCalcul" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" FontSize="36" Height="48"/>
+            <TextBlock x:Name="resultatPaques" HorizontalAlignment="Left" Margin="168,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" FontSize="36" Height="48"/>
+            <TextBlock x:Name="resultatAscension" HorizontalAlignment="Left" Margin="276,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" FontSize="36" Height="48"/>
+            <TextBlock x:Name="resultatPentecote" HorizontalAlignment="Left" Margin="384,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" FontSize="36" Height="48"/>
             <TextBlock x:Name="resultatVerifie" HorizontalAlignment="Left" Margin="31,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="36" Height="50"/>
             <Button x:Name="buttonVerif" Content="Vérifier" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top" Width="82" Height="32" FontSize="14" Click="buttonVerif_Click"/>
         </Grid>
