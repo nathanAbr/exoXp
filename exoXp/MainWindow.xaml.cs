@@ -33,43 +33,43 @@ namespace exoXp
         private void calcul(int jour, int mois, int annee)
         {
             int[] tabMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            string[] tabJour = new string[] { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" };
             int numberDay = 0;
-            int nbBisextil = (int)Math.Floor((double)(annee / 4));
-            int nbBisextilQC = (int)Math.Floor((double)(2017 / 400));
-            int nbBisextilC = (int)Math.Floor((double)(2017 / 100));
+            int nbBisextil = (int)Math.Floor((decimal)(annee / 4));
+            int nbBisextilQC = (int)Math.Floor((decimal)(annee / 400));
+            int nbBisextilC = (int)Math.Floor((decimal)(annee / 100));
             numberDay = (annee - 1) * 365 + (nbBisextil - nbBisextilC + nbBisextilQC);
-            int i = 1;
             if(mois > 2)
             {
                 numberDay++;
             }
-            while(i < mois)
+            for(int i=0;i < (mois-1);i++)
             {
                 numberDay = numberDay + tabMonth[i];
-                i++;
             }
-            for(int j=1;j<=jour; j++)
+            for(int j=1;j<jour; j++)
             {
                 numberDay++;
             }
-            resultatCalcul.Text = numberDay.ToString();
+            resultatCalcul.Text = tabJour[(numberDay % 7)].ToString();
         }
 
         private void buttonCalcul_Click_1(object sender, RoutedEventArgs e)
         {
-            this.calcul(24, 05, 2017);
+            this.calcul(5, 6, 2017);
         }
 
         private void verificationAutomatique()
         {
+            string[] tabJour = new string[] { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" };
             DateTime an = new DateTime(1, 1, 1);
             int annee;
             int mois;
             int jour;
-            DateTime date = new DateTime(2017, 05, 24);
+            DateTime date = new DateTime(2017, 6, 5);
             TimeSpan diff = date - an;
-            int total = (int)diff.TotalDays;
-            resultatVerif.Text = total.ToString();
+            int total = (int)diff.TotalDays + 1;
+            resultatVerif.Text = tabJour[(total % 7)].ToString();
         }
 
         private void buttonVerif_Click(object sender, RoutedEventArgs e)
