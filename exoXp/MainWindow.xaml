@@ -8,7 +8,6 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,10,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="502" Height="40" TextAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Arial" Text="Quel jour aujourd'hui ?"/>
-
         <TextBlock x:Name="labelSaisieDate" HorizontalAlignment="Left" Margin="25,87,0,0" TextWrapping="Wrap" Text="Saisir une date" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="saisieDate" HorizontalAlignment="Left" Height="39" Margin="153,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" TextChanged="saisieDate_KeyPressed" UndoLimit="10" FontSize="20"/>
         <Button x:Name="buttonCalcul" Content="Afficher" HorizontalAlignment="Left" Margin="334,80,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="38" Click="buttonCalcul_Click" Background="#FFA4EC5C"/>
@@ -18,6 +17,5 @@
             <TextBlock x:Name="resultatVerifie" HorizontalAlignment="Left" Margin="31,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="36" Height="50"/>
             <Button x:Name="buttonVerif" Content="Vérifier" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top" Width="82" Height="32" FontSize="14" Click="buttonVerif_Click"/>
         </Grid>
-        
     </Grid>
 </Window>
