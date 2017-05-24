@@ -9,10 +9,12 @@
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,10,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="502" Height="40" TextAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Arial"><Run Text="Les mariés "/><Run Text="de "/><Run Text="l'an 1"/></TextBlock>
         <TextBlock x:Name="labelSaisieDate" HorizontalAlignment="Left" Margin="104,78,0,0" TextWrapping="Wrap" Text="Saisir une date" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="saisieDate" HorizontalAlignment="Left" Height="23" Margin="216,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="saisieDate_TextChanged"/>
-        <Button x:Name="buttonCalcul" Content="Calculer" HorizontalAlignment="Left" Margin="361,78,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="27"/>
+        <TextBox x:Name="saisieDate" HorizontalAlignment="Left" Height="23" Margin="216,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buttonCalcul" Content="Calculer" HorizontalAlignment="Left" Margin="361,78,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Height="27" Click="buttonCalcul_Click_1"/>
         <Grid x:Name="blockResultat" HorizontalAlignment="Left" Height="100" Margin="94,149,0,0" VerticalAlignment="Top" Width="342" Background="#FFE2E2E2">
-            <TextBlock x:Name="resultatCalcul" HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" Text="Affichage du résultat" VerticalAlignment="Top" Width="301" FontSize="16"/>
+            <TextBlock x:Name="TitreCalcul" HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" Text="Affichage du résultat" VerticalAlignment="Top" Width="301" FontSize="16"/>
+            <TextBlock x:Name="resultatCalcul" HorizontalAlignment="Left" Margin="192,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" FontSize="16"/>
+
             <TextBlock x:Name="resultatVerifie" HorizontalAlignment="Left" Margin="31,74,0,0" TextWrapping="Wrap" Text="Affichage de la vérif" VerticalAlignment="Top" Width="301" FontSize="16"/>
             <Button x:Name="buttonVerif" Content="Vérifier" HorizontalAlignment="Left" Margin="237,42,0,0" VerticalAlignment="Top" Width="82" Height="32"/>
         </Grid>
